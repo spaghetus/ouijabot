@@ -1,0 +1,15 @@
+[package]
+name = "askouija"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.35", features = ["derive", "env"] }
+color-eyre = "0.6.3"
+dashmap = "6.1.0"
+memmap = "0.7.0"
+memoize = "0.5.1"
+poise = "0.6.1"
+tokio = { version = "1.44.2", features = ["full"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
