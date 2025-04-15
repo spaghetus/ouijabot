@@ -54,7 +54,9 @@ async fn main() {
     let dict = std::str::from_utf8(Box::leak(dict)).unwrap();
     let dict = dict
         .lines()
-        .filter(|l| l.len() > 1 && l.chars().all(|c| c.is_ascii_alphabetic()))
+        .filter(|l| {
+            (l.len() > 1 || l.to_lowercase() == "a") && l.chars().all(|c| c.is_ascii_alphabetic())
+        })
         .collect::<Vec<_>>()
         .into();
     let framework = poise::Framework::builder()
